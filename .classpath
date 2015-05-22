@@ -20,5 +20,11 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="dependency_lib/bson4jackson-2.1.1.jar"/>
+	<classpathentry kind="lib" path="dependency_lib/jackson-annotations-2.1.4.jar"/>
+	<classpathentry kind="lib" path="dependency_lib/jackson-core-2.1.4.jar"/>
+	<classpathentry kind="lib" path="dependency_lib/jackson-databind-2.1.4.jar"/>
+	<classpathentry kind="lib" path="dependency_lib/jongo-1.1.jar"/>
+	<classpathentry kind="lib" path="dependency_lib/mongo-2.10.1.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
