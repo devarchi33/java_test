@@ -4,19 +4,21 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
-import redis.clients.jedis.JedisPoolConfig;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
+import redis.clients.jedis.JedisPoolConfig;
+import test.util.TestConfig;
 
 public class JedisHelper {
 
-	protected static final String REDIS_HOST = "192.168.0.31";
-	protected static final int REDIS_PORT = 6379;
 	private final Set<Jedis> connectionList = new HashSet<Jedis>();
 	private JedisPool pool;
 
 	
 	private JedisHelper() {
+		TestConfig.getInstance("classpath:test.properties");
+		final String REDIS_HOST = TestConfig.getInstance().getProperties("redis.host");
+		final int REDIS_PORT = Integer.parseInt(TestConfig.getInstance().getProperties("redis.port"));
 		JedisPoolConfig config = new JedisPoolConfig();
 		config.setMaxTotal(20);
 		config.setBlockWhenExhausted(true);
