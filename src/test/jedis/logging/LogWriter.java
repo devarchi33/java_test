@@ -11,7 +11,7 @@ public class LogWriter {
 
 	private static final JedisHelper helper = JedisHelper.getInstance();
 	private static final String KEY_WAS_LOG = "was:log";
-	private static final String LOG_FILE_NAME_PREFIX = "/Users/jeoos43/Desktop/waslog";
+	private static final String LOG_FILE_NAME_PREFIX = System.getProperty("user.home") + "/Desktop/waslog";
 	private static final SimpleDateFormat sdf = new SimpleDateFormat(
 			"yyyMMdd-HH'.log'");
 	private static final int WATING_TERM = 5000;
