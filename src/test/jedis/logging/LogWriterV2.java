@@ -10,7 +10,9 @@ public class LogWriterV2 {
 
 	private static final JedisHelper helper = JedisHelper.getInstance();
 	private static final String KEY_WAS_LOG = "was:log:list";
-	private static final String LOG_FILE_NAME_PREFIX = "/Users/jeoos43/Desktop/waslog";
+	private static final String osName = System.getProperty("os.name");
+	private static final String homePath = System.getProperty("user.home");
+	private static final String LOG_FILE_NAME_PREFIX = osName.startsWith("M") ? homePath.concat("/Desktop") : homePath.concat("\\Desktop");
 	private static final SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd-HH'.log'");
 
 	/**
