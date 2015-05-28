@@ -28,14 +28,14 @@ public class LogSaverTestV1 {
 	 */
 	@AfterClass
 	public static void tearDownAfterClass() throws Exception {
-//		helper.destroyPool();
+		//helper.destroyPool();
 	}
 
 	@Test
 	public void testLogger() {
 		Random random = new Random(System.currentTimeMillis());
 		for (int i = 0; i < 100; i++) {
-			assertTrue(logger.log("This is test log message 1") > 0);
+			assertTrue(logger.log("This is test log message " + i) > 0);
 
 			try {
 				Thread.sleep(random.nextInt(50));
