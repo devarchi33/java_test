@@ -7,7 +7,7 @@ import org.junit.*;
 public class LogTestV2 {
 
 	static JedisHelper helper;
-	private static final int WATING_TERM = 1000;
+	private static final int WATING_TERM = 300;
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
