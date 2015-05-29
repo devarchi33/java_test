@@ -24,7 +24,7 @@ public class JedisHelper {
 		private static final JedisHelper INSTANCE = new JedisHelper();
 	}
 
-	public JedisHelper getInstance() {
+	public static JedisHelper getInstance() {
 		return LazyHolder.INSTANCE;
 	}
 
