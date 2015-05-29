@@ -20,6 +20,21 @@ public class LogTestV2 {
 	}
 
 	@Test
+	public void testWriter() {
+		LogWriterV2 writer = new LogWriterV2();
+
+		for (int i = 0; i < 5; i++) {
+			writer.start();
+
+			try {
+				Thread.sleep(WATING_TERM);
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
+	}
+
+	@Test
 	public void testSaver() {
 		Random random = new Random(System.currentTimeMillis());
 		LogSaverV2 saver = new LogSaverV2(helper);
@@ -34,18 +49,4 @@ public class LogTestV2 {
 		}
 	}
 
-	@Test
-	public void testWriter() {
-		LogWriterV2 writer = new LogWriterV2();
-
-		for (int i = 0; i < 5; i++) {
-			writer.start();
-
-			try {
-				Thread.sleep(WATING_TERM);
-			} catch (Exception e) {
-				// TODO: handle exception
-			}
-		}
-	}
 }
