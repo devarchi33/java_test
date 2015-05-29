@@ -8,13 +8,15 @@ import redis.clients.jedis.JedisPoolConfig;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 
+import test.util.TestConfig;
+
 public class JedisHelper {
 
-	protected static final String REDIS_HOST = "192.168.0.31";
-	protected static final int REDIS_PORT = 6379;
+	private static TestConfig tConfig = TestConfig.getInstance();;
+	private final String REDIS_HOST = tConfig.getProperties("redis.host");
+	private final int REDIS_PORT = Integer.parseInt(tConfig.getProperties("redis.port"));
 	private final Set<Jedis> connectionList = new HashSet<Jedis>();
 	private JedisPool pool;
-
 	
 	private JedisHelper() {
 		JedisPoolConfig config = new JedisPoolConfig();
