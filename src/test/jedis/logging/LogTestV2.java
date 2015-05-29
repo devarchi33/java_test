@@ -7,7 +7,7 @@ import org.junit.*;
 public class LogTestV2 {
 
 	static JedisHelper helper;
-	private static final int WATING_TERM = 5000;
+	private static final int WATING_TERM = 1000;
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -24,7 +24,7 @@ public class LogTestV2 {
 		Random random = new Random(System.currentTimeMillis());
 		LogSaverV2 saver = new LogSaverV2(helper);
 		for (int i = 0; i < 100; i++) {
-			assertTrue(saver.log(i + ", This is new test log Message") > 0);
+			assertTrue(saver.log(", " + i + ", This is new test log Message") > 0);
 
 			try {
 				Thread.sleep(random.nextInt(50));
