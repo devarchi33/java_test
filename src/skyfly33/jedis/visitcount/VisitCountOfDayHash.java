@@ -8,7 +8,7 @@ public class VisitCountOfDayHash {
 
 	private JedisHelper jedisHelper;
 	private Jedis jedis;
-	private static final String KEY_EVENT_DAILY_CLICK_TOTAL = "event:daily:click:total:hash:";
+	private static final String KEY_EVENT_DAILY_CLICK_TOTAL = "event:daily:click:total:hash";
 	private static final String KEY_EVENT_CLICK_CLICK = "event:daily:click:hash:";
 
 	/**
