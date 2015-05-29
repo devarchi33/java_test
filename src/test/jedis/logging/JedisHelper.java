@@ -39,7 +39,6 @@ public class JedisHelper {
 	
 	final public Jedis getConnection() {
 		Jedis jedis = this.pool.getResource();
-//		Jedis jedis = new Jedis("192.168.0.31");
 		this.connectionList.add(jedis);
 
 		return jedis;

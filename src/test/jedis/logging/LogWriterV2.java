@@ -44,7 +44,7 @@ public class LogWriterV2 {
 	 * 
 	 * @return 현재 시간에 해당하는 로그 파일명
 	 */
-	public String getCurrentFileName() {
+	private String getCurrentFileName() {
 		return LOG_FILE_NAME_PREFIX + sdf.format(new Date());
 	}
 	
