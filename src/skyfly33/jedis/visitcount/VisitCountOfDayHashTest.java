@@ -46,7 +46,7 @@ public class VisitCountOfDayHashTest {
 		assertNotNull(visitCount.firstKey());
 		assertNotNull(visitCount.lastKey());
 
-		System.out.println(visitCount);
+		System.out.println("individual : " + visitCount);
 
 		SortedMap<String, String> totalVisit = visitCountOfDay.getVisitCountByDailyTotal();
 		assertTrue(totalVisit.size() > 0);
@@ -54,7 +54,7 @@ public class VisitCountOfDayHashTest {
 		assertNotNull(totalVisit.firstKey());
 		assertNotNull(totalVisit.lastKey());
 
-		System.out.println(totalVisit);
+		System.out.println("total : " + totalVisit);
 
 	}
 }
