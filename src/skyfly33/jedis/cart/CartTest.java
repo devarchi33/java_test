@@ -47,16 +47,17 @@ public class CartTest {
 		System.out.println("product list : " + products);
 	}
 
-	@Test
+//	@Test
 	public void testDeleteProduct() {
 		String[] products = { "151" };
 		int result = this.cart.deleteProduct(products);
 		assertEquals(1, result);
 	}
 
-	@Test
+	@SuppressWarnings("deprecation")
+//	@Test
 	public void testFlushCart() {
 		assertTrue(this.cart.flushCart() > -1);
-		assertTrue(this.cart.flushCartDeprecate() > -1);
+		assertTrue(this.cart.flushCartDeprecated() > -1);
 	}
 }
