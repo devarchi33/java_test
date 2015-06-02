@@ -80,8 +80,8 @@ public class Cart {
 			result += this.jedis.del(this.userNo + KEY_CART_PRODUCT + item);
 		}
 
-		this.jedis
-				.set(this.userNo, KEY_CART_LIST, this.cartInfo.toJSONString());
+		this.jedis.set(this.userNo + KEY_CART_LIST,
+				this.cartInfo.toJSONString());
 		return result;
 	}
 
