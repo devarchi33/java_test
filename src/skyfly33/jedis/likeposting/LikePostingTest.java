@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
+import java.util.List;
 import java.util.Random;
 
 import org.junit.AfterClass;
@@ -66,7 +67,7 @@ public class LikePostingTest {
 	
 	
 	@Test
-	public void testGetLikecount() {
+	public void testGetLikeCount() {
 		String postingNo = String.valueOf(this.rand.nextInt(POSTING_COUNT));
 		if(this.likePosting.isLiked(postingNo, String.valueOf(TESTUSER))) {
 			assertTrue(this.likePosting.unLike(postingNo, String.valueOf(TESTUSER)));
@@ -75,6 +76,15 @@ public class LikePostingTest {
 		Long prevCount = this.likePosting.getLikeCount(postingNo);
 		this.likePosting.like(postingNo, String.valueOf(TESTUSER));
 		assertEquals(this.likePosting.getLikeCount(postingNo), new Long(prevCount + 1));
+		
+		System.out.println(prevCount);
+	}
+	
+	
+	@Test
+	public void testGetLikeCountList() {
+		List<Long> countList = this.likePosting.getLikeCountList(POSTLIST);
+		assertEquals(countList.size(), POSTING_COUNT);
 	}
 	
 	
@@ -84,6 +94,7 @@ public class LikePostingTest {
 		this.likePosting.like(postingNo, String.valueOf(TESTUSER));
 		assertTrue(this.likePosting.isLiked(postingNo, String.valueOf(TESTUSER)));
 	}
+	
 	
 	@Test
 	public void testDeleteLikeInfo() {
