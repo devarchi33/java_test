@@ -14,7 +14,8 @@ public class CartTest {
 
 	private static final String TESTUSER = "12521";
 	static JedisHelper helper;
-	private Cart cart;
+	// private Cart cart;
+	private CartV2 cart;
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -28,7 +29,8 @@ public class CartTest {
 
 	@Before
 	public void setUp() throws Exception {
-		this.cart = new Cart(helper, TESTUSER);
+		// this.cart = new Cart(helper, TESTUSER);
+		this.cart = new CartV2(helper, TESTUSER);
 		assertNotNull(this.cart);
 	}
 
@@ -47,15 +49,15 @@ public class CartTest {
 		System.out.println("product list : " + products);
 	}
 
-//	@Test
+//	 @Test
 	public void testDeleteProduct() {
 		String[] products = { "151" };
 		int result = this.cart.deleteProduct(products);
-		assertEquals(1, result);
+		assertEquals(2, result);
 	}
 
 	@SuppressWarnings("deprecation")
-//	@Test
+//	 @Test
 	public void testFlushCart() {
 		assertTrue(this.cart.flushCart() > -1);
 		assertTrue(this.cart.flushCartDeprecated() > -1);
