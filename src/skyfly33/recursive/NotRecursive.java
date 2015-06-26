@@ -5,10 +5,10 @@ package skyfly33.recursive;
  * @author skyfly33
  *
  */
-public class RecursiveV2 {
+public class NotRecursive {
 
 	public static void main(String[] args) {
-		RecursiveV2 re = new RecursiveV2();
+		NotRecursive re = new NotRecursive();
 		String value = re.printChar(3);
 		System.out.println("value : " + value);
 
